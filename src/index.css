@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --color-gold: #FFD54F;
+  --color-gold-dark: #B8860B;
+  --color-bg-start: #0f2027;
+  --color-bg-mid: #203a43;
+  --color-bg-end: #2c5364;
+}
+
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom right, var(--color-bg-start), var(--color-bg-mid), var(--color-bg-end));
+  color: white;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-sans);
+}
+
+/* Premium Golden Gradient Utility */
+@utility gold-gradient {
+  background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) !important;
+  color: #000 !important;
+}
+
+/* Premium Text Gradient Utility */
+@utility text-gold-gradient {
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+@utility glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-gold {
+  @apply gold-gradient text-black font-bold py-3 px-6 rounded-2xl transition-transform active:scale-95 shadow-lg;
+}
+
+/* Mobile-first constraints */
+#root {
+  max-width: 500px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
